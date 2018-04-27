@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvK-Gp-fSj">
+                                <rect key="frame" x="16" y="36" width="64" height="27.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="156" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="AJs-LN-eCi">
+                                <rect key="frame" x="0.0" y="79.5" width="375" height="541.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteTableViewCell" rowHeight="156" id="PZ0-UE-8pg" customClass="NoteTableViewCell" customModule="Notes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="375" height="156"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PZ0-UE-8pg" id="EoR-ci-pSY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Note title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kNr-4G-ZbD">
+                                                    <rect key="frame" x="15" y="11" width="77.5" height="21"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textFieldDidChange:" destination="PZ0-UE-8pg" eventType="editingChanged" id="X8l-HF-o2i"/>
+                                                        <action selector="textFieldDidEndOnExit:" destination="PZ0-UE-8pg" eventType="editingDidEndOnExit" id="4yC-gH-N2b"/>
+                                                    </connections>
+                                                </textField>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Lorem ipsum this is a big description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NQ2-Fj-GeN">
+                                                    <rect key="frame" x="11" y="32" width="353" height="113"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="Q49-nu-IAx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="PZ0-UE-8pg" id="Vfw-iU-K4D"/>
+                                                    </connections>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="NQ2-Fj-GeN" secondAttribute="trailing" constant="-4" id="Zgx-RV-oaf"/>
+                                                <constraint firstItem="NQ2-Fj-GeN" firstAttribute="leading" secondItem="EoR-ci-pSY" secondAttribute="leadingMargin" constant="-4" id="hte-ht-vqw"/>
+                                                <constraint firstItem="kNr-4G-ZbD" firstAttribute="top" secondItem="EoR-ci-pSY" secondAttribute="topMargin" id="qfM-1X-rk4"/>
+                                                <constraint firstItem="NQ2-Fj-GeN" firstAttribute="top" secondItem="kNr-4G-ZbD" secondAttribute="bottom" id="sXT-9u-yj8"/>
+                                                <constraint firstItem="kNr-4G-ZbD" firstAttribute="leading" secondItem="EoR-ci-pSY" secondAttribute="leadingMargin" id="vdJ-kX-Zsm"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="NQ2-Fj-GeN" secondAttribute="bottom" id="y7h-zJ-3rP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="noteTextView" destination="NQ2-Fj-GeN" id="nKH-4r-xZP"/>
+                                            <outlet property="titleTextField" destination="kNr-4G-ZbD" id="EwA-O4-P83"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="i6n-e9-Z4d"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mfa-7G-Cls"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQZ-cn-GIZ">
+                                <rect key="frame" x="0.0" y="621" width="375" height="46"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="Uff-4O-iyl"/>
+                                </constraints>
+                                <state key="normal" title="Add note">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addNoteWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZJx-h7-Ogs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iQZ-cn-GIZ" firstAttribute="top" secondItem="AJs-LN-eCi" secondAttribute="bottom" id="0cM-Uj-NNc"/>
+                            <constraint firstItem="bvK-Gp-fSj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="5Yc-WA-raW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iQZ-cn-GIZ" secondAttribute="bottom" id="ZC2-4x-397"/>
+                            <constraint firstItem="iQZ-cn-GIZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cQh-VL-f40"/>
+                            <constraint firstItem="AJs-LN-eCi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kdT-zs-LGs"/>
+                            <constraint firstItem="bvK-Gp-fSj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qWx-PM-f5Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AJs-LN-eCi" secondAttribute="trailing" id="tUg-hF-fiq"/>
+                            <constraint firstItem="AJs-LN-eCi" firstAttribute="top" secondItem="bvK-Gp-fSj" secondAttribute="bottom" constant="16" id="uxS-Z8-0Hw"/>
+                            <constraint firstItem="iQZ-cn-GIZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wFg-hR-7sU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="AJs-LN-eCi" id="1HY-GE-7Qw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

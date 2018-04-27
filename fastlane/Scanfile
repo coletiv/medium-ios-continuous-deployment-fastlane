@@ -1,0 +1,15 @@
+# For more information about this configuration visit
+# https://docs.fastlane.tools/actions/scan/#scanfile
+
+# In general, you can use the options available
+# fastlane scan --help
+
+scheme "Notes"
+
+devices ["iPhone 8"]
+
+# Slack - uncomment the following lines for Slack Notifications
+# slack_url "your_slack_url"
+# slack_channel "your_slack_channel"
+
+clean true
