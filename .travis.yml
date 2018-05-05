@@ -1,11 +1,16 @@
+# Configurations
 language: objective-c
 osx_image: xcode9.2
 xcode_sdk: iphonesimulator11.0
+# Before Install
 before_install:
+# This command will provide travis machines with github access
 - echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
+# Script (Fastlane)
 script:
 - fastlane scan
 - fastlane travis_testflight
+# Environmental Variables
 env:
   global:
   - secure: VrIEyJrkZo+IkOXHJEIir+sYIt9YsuYDcCCdtGtY1ILT5MbENSeC3rjhsi8jmg4L9mUna2mayWvZsHfo8WqLg5Iyq9TshvewhnsMI/7eEqis7afnw9kY8qJA23lsMjj57SPn0Y/C8HU2/jzlfrg0qFdCgRzOZW1BaxBq8hM1pWv8+jisbTG2M+2DgFjKUj2mstFRIkIRHsI6+NnHvHdymIVEZbneBFL0iJ/8gWqi2uq1iNobDql4jQUY8z8n2LbAwtxPIRvp/6PAKBhRzaa/jDFbayBH/W6ecLc/i1YzNJZ3N5YuWynMO30DUVQuCjTzmpSM9jmqh7czLaPpco40W0SnEFCxFJ9tlnmSyHoD6/TDalfpML30JKnA5ReuYHdy0Xa4knrV7YT28Yv4IV1cAU2byJlyaunMxt5biz1xO3nSciYqrXVKOBCHQlLBNsChNkRFn+ueKrNfGZX4gvOyfaJIOY1gAcWyZ7dJtDtgrK30W3iol6On4lVhb+sCoCRej8K5DmYepAFnjzvvq6iNaBosp7WpBzOTk3AuaKEU3yLDBJva+Ebh7NEvvKPhBzpdcX0uQAE3yRodnxfOhiyvXXraHdEYEcYbAIMQXISJOx+pWAC/irWlf6Co2i3T6Hw3oCZ1TYSp1h8ZbsZdw9KJ8QpTXasjv3lXYPKIndGTdlk=
