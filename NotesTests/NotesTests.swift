@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Notes
+@testable import Coletiv_Notes
 
 class NotesTests: XCTestCase {
     
