@@ -21,6 +21,11 @@ or alternatively using `brew cask install fastlane`
 fastlane ios manual_testflight
 ```
 Push Notes to TestFlight Manually
+### ios travis_testflight
+```
+fastlane ios travis_testflight
+```
+Push Notes to TestFlight with Travis CI
 
 ----
 
